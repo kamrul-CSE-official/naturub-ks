@@ -9,6 +9,7 @@ export default function Index() {
       style={{
         flex: 1,
         margin: 16,
+        marginTop: 20
       }}
     >
       <Card>

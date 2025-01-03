@@ -27,6 +27,7 @@ const CombinedDefaultTheme = merge(LightTheme, customLightTheme);
 const CombinedDarkTheme = merge(DarkTheme, customDarkTheme);
 
 import { useTheme } from "../hooks/useTheme";
+import { View } from "react-native";
 
 export default function RootLayout() {
   // const colorScheme = useColorScheme();
@@ -37,17 +38,22 @@ export default function RootLayout() {
 
   return (
     <PaperProvider theme={paperTheme}>
+      <StatusBar
+        style={colorScheme === "dark" ? "light" : "dark"}
+        translucent={true}
+        hidden={false}
+      />
+      {/* @ts-ignore */}
       <ThemeProvider value={paperTheme}>
-        <Stack>
-          <Stack.Screen
-            name="(tabs)"
-            options={{
-              headerShown: false,
-            }}
-          />
-        </Stack>
+          <Stack>
+            <Stack.Screen
+              name="(tabs)"
+              options={{
+                headerShown: false,
+              }}
+            />
+          </Stack>
       </ThemeProvider>
-      <StatusBar style={colorScheme === "dark" ? "light" : "dark"} />
     </PaperProvider>
   );
 }

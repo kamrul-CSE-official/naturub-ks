@@ -8,6 +8,7 @@ export default function TabLayout() {
         name="index"
         options={{
           title: "Home",
+          headerShown: false,
           tabBarIcon: ({ color }) => (
             <Feather name="home" size={24} color={color} />
           ),
@@ -17,8 +18,20 @@ export default function TabLayout() {
         name="settings"
         options={{
           title: "Setting",
+          headerShown: false,
           tabBarIcon: ({ color }) => (
             <Feather name="settings" size={24} color={color} />
+          ),
+        }}
+      />
+
+      <Tabs.Screen
+        name="ProfileScreen"
+        options={{
+          title: "ProfileScreen",
+          headerShown: false,
+          tabBarIcon: ({ color }) => (
+            <Feather name="user-check" size={24} color={color} />
           ),
         }}
       />
